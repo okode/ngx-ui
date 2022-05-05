@@ -3,5 +3,37 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "@okode/ngx-ui": {
+      "projectType": "library",
+      "root": "projects/okode/ngx-ui",
+      "sourceRoot": "projects/okode/ngx-ui/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/okode/ngx-ui/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/okode/ngx-ui/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/okode/ngx-ui/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/okode/ngx-ui/src/test.ts",
+            "tsConfig": "projects/okode/ngx-ui/tsconfig.spec.json",
+            "karmaConfig": "projects/okode/ngx-ui/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "@okode/ngx-ui"
 }
