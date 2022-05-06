@@ -3,9 +3,9 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "@okode/ngx-ui": [
-        "dist/okode/ngx-ui/okode-ngx-ui",
-        "dist/okode/ngx-ui"
+      "@mar/ngx-ui": [
+        "dist/mar/ngx-ui/mar-ngx-ui",
+        "dist/mar/ngx-ui"
       ]
     },
     "baseUrl": "./",
