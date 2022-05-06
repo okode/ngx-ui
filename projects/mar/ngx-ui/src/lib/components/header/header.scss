@@ -1,0 +1,134 @@
+@import 'utils/variables';
+@import 'utils/mixins';
+
+:host {
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: $safe-area-top;
+    z-index: 9;
+  }
+  &.white,  &.white:before  { background-color: $color-white;               color: $color-primary; }
+  &.light,  &.light:before  { background-color: $color-primary-ultra-light; color: $color-primary; }
+  &.medium, &.medium:before { background-color: $color-primary-light;       color: $color-primary; }
+  &.dark,   &.dark:before   { background-color: $color-primary;             color: $color-white; }
+  &.red,    &.red:before    { background-color: $color-red-medium-dark;     color: $color-white; }
+  &.dark, &.red {
+    img, &::ng-deep img {
+      @include fill-white-svg-icon;
+    }
+    * {
+      color: $color-white !important;
+    }
+  }
+  &.bordered {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.01), inset 0px -1px 0px $color-grey-1;
+  }
+  display: block;
+  flex-basis: fit-content;
+  flex-shrink: 0;
+  text-align: center;
+  .c-header {
+    padding: 14px 20px;
+    padding-top: calc($safe-area-top + 14px); // safe-area
+    position: relative;
+    &__container {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      transition: margin 0.2s ease-in-out;
+    }
+    &__left-icon, &__right-icon {
+      width: 32px;
+      height: 32px;
+    }
+    &__title {
+      font-size: 16px;
+      font-weight: 400;
+      width: calc(100% - 32px - 32px);
+      height: 32px;
+      line-height: 32px;
+      padding: 0 16px;
+      @include ellipsis(100%);
+      img {
+        margin: 1px 6px 4px 6px;
+      }
+    }
+    &__collapsable {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      overflow: hidden;
+      width: 100%;
+      max-height: 400px;
+      transition: max-height 0.5s ease-in-out;
+      &--hidden {
+        max-height: 0;
+      }
+    }
+    &__subtitle {
+      font-size: 12px;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      color: $color-grey-5;
+      width: calc(100% - 32px - 32px);
+      height: 16px;
+      line-height: 16px;
+      padding: 0 16px;
+      @include ellipsis(100%);
+    }
+    &__toolbar {
+      &:not(:empty) {
+        padding: 10px 0 0 0;
+      }
+      &::ng-deep h2 {
+        margin: 20px 0 10px 0;
+      }
+      &::ng-deep .c-segment {
+        margin: 10px 0 5px 0;
+      }
+      &::ng-deep h2 + .c-segment {
+        margin-top: 20px;
+      }
+      text-align: left;
+      width: 100%;
+      transition: opacity 0.25s ease-out 0.15s, height 0.25s ease-out;
+    }
+    &__progress-bar {
+      width: 100%;
+      height: 2px;
+      background-color: $color-primary-ultra-light;
+      &-fill {
+        background-color: $color-red;
+        height: 2px;
+        transition: width 0.5s ease-in-out;
+      }
+    }
+    &--featured {
+      .c-header__title {
+        font-size: 28px ;
+        line-height: 32px;
+        text-align: left;
+        padding: 0;
+        width: calc(100% - 32px - 32px - 4px - 4px);
+        order: 1;
+      }
+      .c-header__left-icon {
+        order: 2;
+        margin-left: 4px;
+      }
+      .c-header__right-icon {
+        order: 3;
+        margin-left: 4px;
+      }
+      .c-header__toolbar, .c-header__collapsable {
+        order: 4;
+      }
+    }
+  }
+}

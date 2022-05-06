@@ -1,0 +1,10 @@
+<div class="c-button c-button--color-{{color}} c-button--size-{{size}}"
+  [ngClass]="{
+    'c-button--outline': mode === 'outline',
+    'c-button--clear': mode === 'clear',
+    'c-button--disabled': disabled,
+    'c-button--rounded': rounded,
+    'c-button--dark-background': darkBackground
+  }">
+  <ng-content></ng-content>
+</div>

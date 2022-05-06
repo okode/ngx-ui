@@ -2,6 +2,6 @@
  * Public API Surface of ngx-ui
  */
 
-export * from './lib/ngx-ui.service';
-export * from './lib/ngx-ui.component';
+export * from './lib/components/button/button';
+export * from './lib/components/header/header';
 export * from './lib/ngx-ui.module';

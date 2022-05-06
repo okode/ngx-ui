@@ -1,0 +1,213 @@
+@import 'utils/variables';
+@import 'utils/mixins';
+
+:host {
+  display: inline-block;
+  pointer-events: none;
+  &.full-width {
+    display: block;
+    .c-button {
+      padding: 12px 24px !important;
+    }
+  }
+  &.only-icon {
+    .c-button {
+      padding: 0;
+      width: 48px;
+      height: 48px;
+      ::ng-deep img {
+        margin: 10px -4px 0 -4px;
+      }
+    }
+  }
+}
+
+.c-button {
+  pointer-events: all;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  display: block;
+  max-width: 100%;
+  text-align: center;
+  transition: background-color .3s ease-in-out, color .3s ease-in-out, border-color .3s ease-in-out;
+  overflow: hidden;
+  line-height: 24px;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  height: 48px;
+  @include ellipsis(100%);
+  &:hover, &:active {
+    cursor: pointer;
+  }
+
+  ::ng-deep img {
+    width: 24px;
+    height: 24px;
+    margin: -6px 0 0 4px;
+    transition: all .3s ease-in-out;
+  }
+  &--size-small {
+    height: 40px;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 12px 24px;
+    font-weight: 400;
+    ::ng-deep img {
+      width: 20px;
+      height: 20px;
+      margin: -5px 0 0 2px;
+    }
+  }
+
+  @mixin button-image-white    { ::ng-deep img { @include fill-white-svg-icon; } }
+  @mixin button-image-black    { ::ng-deep img { @include fill-black-svg-icon; } }
+  @mixin button-image-red      { ::ng-deep img { @include fill-red-svg-icon; } }
+
+  &--rounded {
+    border-radius: 24px;
+    padding: 12px 20px;
+    font-weight: 400;
+    &.c-button--size-small {
+      padding: 12px 16px;
+    }
+  }
+
+  &--color {
+    &-primary {
+      background-color: $color-primary;
+      border-color: $color-primary;
+      color: $color-white;
+      @include button-image-white;
+      &.c-button--outline {
+        background-color: transparent;
+        color: $color-primary;
+        border-color: $color-grey-2;
+        @include button-image-black;
+      }
+      &.c-button--clear {
+        background-color: transparent !important;
+        color: $color-primary !important;
+        border-color: transparent !important;
+        @include button-image-black;
+      }
+      &:not(.c-button--clear):not(.c-button--outline):hover, &:not(.c-button--clear):not(.c-button--outline):active {
+        background-color: $color-primary-dark;
+        border-color: $color-primary-dark;
+        color: $color-white;
+        @include button-image-white;
+      }
+    }
+    &-red {
+      background-color: $color-red;
+      border-color: $color-red;
+      color: $color-white;
+      @include button-image-white;
+      &.c-button--outline {
+        background-color: transparent;
+        color: $color-red;
+        @include button-image-red;
+      }
+      &.c-button--clear {
+        background-color: transparent !important;
+        color: $color-red !important;
+        border-color: transparent !important;
+        @include button-image-red;
+      }
+      &:not(.c-button--clear):not(.c-button--outline):not(.c-button--dark-background):hover,
+      &:not(.c-button--clear):not(.c-button--outline):not(.c-button--dark-background):active {
+        background-color: $color-red-medium-dark;
+        border-color: $color-red-medium-dark;
+        color: $color-white;
+        @include button-image-white;
+      }
+    }
+  }
+
+  &--disabled {
+    cursor: default;
+    pointer-events: none;
+    background-color: $color-disabled;
+    border-color: $color-disabled;
+    color: $color-grey-3;
+    @include button-image-black;
+    ::ng-deep img { opacity: 0.15; }
+    &.c-button--outline {
+      background-color: transparent;
+      border-color: $color-grey-3;
+      color: $color-grey-3;
+    }
+    &.c-button--clear {
+      background-color: transparent;
+      border-color: transparent;
+      color: $color-grey-3 !important;
+    }
+  }
+
+  &--dark-background {
+    &.c-button--color-primary {
+      background-color: $color-white !important;
+      border-color: $color-white !important;
+      color: $color-primary !important;
+      @include button-image-black();
+      &:hover {
+        @include button-image-black();
+      }
+      &.c-button--outline {
+        background-color: transparent !important;
+        color: $color-white !important;
+        border-color: rgba(255, 255, 255, 0.6) !important;
+        @include button-image-white;
+      }
+      &.c-button--clear {
+        background-color: transparent !important;
+        color: $color-white !important;
+        border-color: transparent !important;
+        @include button-image-white;
+      }
+    }
+    &.c-button--color-red {
+      background-color: $color-white !important;
+      border-color: $color-white !important;
+      color: $color-red !important;
+      @include button-image-red;
+      &:hover {
+        @include button-image-red;
+      }
+      &.c-button--outline {
+        background-color: transparent !important;
+        color: $color-white !important;
+        border-color: rgba(255, 255, 255, 0.6) !important;
+        @include button-image-white;
+      }
+      &.c-button--clear {
+        background-color: transparent !important;
+        color: $color-white !important;
+        border-color: transparent !important;
+        @include button-image-white;
+      }
+    }
+
+    &.c-button--disabled {
+      cursor: default;
+      pointer-events: none;
+      background-color: rgba(255, 255, 255, 0.2) !important;
+      border-color: transparent !important;
+      color: rgba(255, 255, 255, 0.2) !important;
+      @include button-image-white;
+      &.c-button--outline {
+        background-color: transparent;
+        border-color: rgba(255, 255, 255, 0.4) !important;
+        color: rgba(255, 255, 255, 0.4) !important;
+      }
+      &.c-button--clear {
+        background-color: transparent;
+        border-color: transparent;
+        color: rgba(255, 255, 255, 0.4)!important;
+      }
+    }
+
+  }
+
+}

@@ -1,0 +1,100 @@
+// Media queries
+
+@mixin screen-custom($max-width) {
+  @media (max-width: $max-width) {
+    @content;
+  }
+}
+
+@mixin screen-mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin screen-tablet {
+  @media (min-width: 768px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin screen-desktop {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin screen-mobile-and-tablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+// Utils
+
+@mixin fill-red-svg-icon {
+  filter: invert(50%) sepia() saturate(10000%) hue-rotate(22deg);
+}
+
+@mixin fill-red-dark-svg-icon {
+  filter: invert(50%) sepia() saturate(10000%) hue-rotate(22deg) brightness(0.8);
+}
+
+@mixin fill-red-svg-error {
+  filter: invert(50%) sepia() saturate(10000%) hue-rotate(22deg);
+}
+
+@mixin fill-success-svg-icon {
+  filter: invert(27%) sepia(92%) saturate(4806%) hue-rotate(149deg) brightness(97%) contrast(101%);
+}
+
+@mixin fill-favorite-svg-icon {
+  filter: invert(94%) sepia(77%) saturate(5778%) hue-rotate(355deg) brightness(206%) contrast(102%);
+}
+
+@mixin fill-primary-svg-icon {
+  filter: invert(18%) sepia(24%) saturate(421%) hue-rotate(158deg) brightness(88%) contrast(87%);
+}
+
+@mixin fill-white-svg-icon {
+  filter: brightness(0%) invert(100%);
+}
+
+@mixin fill-black-svg-icon {
+  filter: brightness(0%);
+}
+
+@mixin ellipsis($max-width) {
+  max-width: $max-width;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { // IE hack
+    overflow: visible;
+  }
+}
+
+@mixin ellipsis-lines($lines) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}
+
+
+@mixin only-ie {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+
+@mixin no-selectable-text {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+@mixin selectable-text {
+  user-select: text;
+}
+

@@ -1,0 +1,150 @@
+@import 'utils/mixins';
+@import 'utils/variables';
+
+$spacers: 0, 2, 4, 6, 8, 12, 14, 16, 18, 24, 32, 36, 42, 48, 56, 64, 72, 80;
+
+//
+// TEXT
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+.h-text-size-35 { font-size: 35px; line-height: 40px; }
+.h-text-size-28 { font-size: 28px; line-height: 32px; }
+.h-text-size-24 { font-size: 24px; line-height: 32px; }
+.h-text-size-20 { font-size: 20px; line-height: 28px; }
+.h-text-size-18 { font-size: 18px; line-height: 24px; }
+.h-text-size-16 { font-size: 16px; line-height: 24px; }
+.h-text-size-14 { font-size: 14px; line-height: 18px; }
+.h-text-size-12 { font-size: 12px; line-height: 16px; }
+.h-text-uppercase   { text-transform: uppercase; }
+.h-text-regular     { font-weight: 400; }
+.h-text-medium      { font-weight: 500; }
+.h-text-bold        { font-weight: 600; }
+.h-text-align-left      { text-align: left; }
+.h-text-align-center    { text-align: center; }
+.h-text-align-right     { text-align: right; }
+.h-text-color-red                  { color: $color-red; }
+.h-text-color-red-medium-dark      { color: $color-red-medium-dark; }
+.h-text-color-red-dark             { color: $color-red-dark; }
+.h-text-color-primary              { color: $color-primary; }
+.h-text-color-primary-dark         { color: $color-primary-dark; }
+.h-text-color-primary-medium       { color: $color-primary-medium; }
+.h-text-color-primary-medium-ligth { color: $color-primary-medium-ligth; }
+.h-text-color-primary-ultra-light  { color: $color-primary-ultra-light; }
+.h-text-color-black                { color: $color-black; }
+.h-text-color-grey-7               { color: $color-grey-7; }
+.h-text-color-grey-6               { color: $color-grey-6; }
+.h-text-color-grey-5               { color: $color-grey-5; }
+.h-text-color-grey-4               { color: $color-grey-4; }
+.h-text-color-grey-3               { color: $color-grey-3; }
+.h-text-color-grey-2               { color: $color-grey-2; }
+.h-text-color-grey-1               { color: $color-grey-1; }
+.h-text-color-white                { color: $color-white; }
+.h-text-color-active               { color: $color-active; }
+.h-text-color-disabled             { color: $color-disabled; }
+.h-text-color-success              { color: $color-success; }
+.h-text-color-error                { color: $color-error; }
+.h-text-color-alert                { color: $color-alert; }
+.h-text-color-favorite             { color: $color-favorite; }
+
+
+//
+// BACKGROUND
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+.h-background-color-red                  { background-color: $color-red; }
+.h-background-color-red-medium-dark      { background-color: $color-red-medium-dark; }
+.h-background-color-red-dark             { background-color: $color-red-dark; }
+.h-background-color-primary              { background-color: $color-primary; }
+.h-background-color-primary-dark         { background-color: $color-primary-dark; }
+.h-background-color-primary-medium       { background-color: $color-primary-medium; }
+.h-background-color-primary-medium-ligth { background-color: $color-primary-medium-ligth; }
+.h-background-color-primary-ultra-light  { background-color: $color-primary-ultra-light; }
+.h-background-color-black                { background-color: $color-black; }
+.h-background-color-grey-7               { background-color: $color-grey-7; }
+.h-background-color-grey-6               { background-color: $color-grey-6; }
+.h-background-color-grey-5               { background-color: $color-grey-5; }
+.h-background-color-grey-4               { background-color: $color-grey-4; }
+.h-background-color-grey-3               { background-color: $color-grey-3; }
+.h-background-color-grey-2               { background-color: $color-grey-2; }
+.h-background-color-grey-1               { background-color: $color-grey-1; }
+.h-background-color-white                { background-color: $color-white; }
+.h-background-color-active               { background-color: $color-active; }
+.h-background-color-disabled             { background-color: $color-disabled; }
+.h-background-color-success              { background-color: $color-success; }
+.h-background-color-error                { background-color: $color-error; }
+.h-background-color-alert                { background-color: $color-alert; }
+.h-background-color-favorite             { background-color: $color-favorite; }
+
+
+//
+// BORDER RADIUS
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+.h-border-radius-4 { border-radius: 4px; }
+.h-border-radius-6 { border-radius: 6px; }
+.h-border-radius-8 { border-radius: 8px; }
+.h-border-radius-12 { border-radius: 12px; }
+.h-border-radius-16 { border-radius: 16px; }
+
+
+
+//
+// ICONS
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+.h-icon-size-16 { width: 16px; height: 16px; box-sizing: content-box; }
+.h-icon-size-24 { width: 24px; height: 24px; box-sizing: content-box; }
+.h-icon-size-32 { width: 32px; height: 32px; box-sizing: content-box; }
+.h-icon-size-48 { width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid $color-grey-6; padding: 10px; box-sizing: border-box; }
+.h-icon-size-56 { width: 56px; height: 56px; border-radius: 50%; border: 1.5px solid $color-grey-6; padding: 10px; box-sizing: border-box; }
+.h-icon-size-64 { width: 64px; height: 64px; border-radius: 50%; border: 1.5px solid $color-grey-6; padding: 10px; box-sizing: border-box; }
+.h-icon-color-white    { @include fill-white-svg-icon; border-color: $color-white; }
+.h-icon-color-primary  { @include fill-primary-svg-icon; border-color: $color-primary; }
+.h-icon-color-success  { @include fill-success-svg-icon; border-color: $color-success; }
+.h-icon-color-error    { @include fill-red-svg-icon; border-color: $color-red; }
+.h-icon-color-red      { @include fill-red-svg-icon; border-color: $color-red; }
+.h-icon-color-favorite { @include fill-favorite-svg-icon; border-color: $color-favorite; }
+
+
+//
+// MARGIN
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@each $value in $spacers {
+  .h-margin-#{$value}   { margin: $value + 0px; }
+  .h-margin-t-#{$value} { margin-top: $value + 0px !important; }
+  .h-margin-b-#{$value} { margin-bottom: $value + 0px !important; }
+  .h-margin-r-#{$value} { margin-right: $value + 0px !important; }
+  .h-margin-l-#{$value} { margin-left: $value + 0px !important; }
+}
+
+
+//
+// PADDING
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@each $value in $spacers {
+  .h-padding-#{$value}   { padding: $value + 0px; }
+  .h-padding-t-#{$value} { padding-top: $value + 0px !important; }
+  .h-padding-b-#{$value} { padding-bottom: $value + 0px !important; }
+  .h-padding-r-#{$value} { padding-right: $value + 0px !important; }
+  .h-padding-l-#{$value} { padding-left: $value + 0px !important; }
+}
+
+
+//
+// OTHERS
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+.h-cursor-pointer { cursor: pointer; }
+.h-cursor-default { cursor: default; }
+.h-pointer-events-none { pointer-events: none; }
+.h-selectable-text { @include selectable-text; }
+.h-float-left  { float: left; }
+.h-float-right { float: right; }
+.h-text-ellipsis { @include ellipsis(100%); }
+.h-text-ellipsis-2-lines { @include ellipsis-lines(2); }
+.h-text-ellipsis-3-lines { @include ellipsis-lines(3); }
+.h-text-ellipsis-4-lines { @include ellipsis-lines(4); }
+.h-text-ellipsis-5-lines { @include ellipsis-lines(5); }
+.h-show-on-mobile { display: none !important; @include screen-mobile { display: inline-block !important; } }
+.h-hide-on-mobile { display: inline-block !important; @include screen-mobile { display: none !important; } }
+.h-show-on-tablet { display: none !important; @include screen-tablet { display: inline-block !important; } }
+.h-hide-on-tablet { display: inline-block !important; @include screen-tablet { display: none !important; } }
+.h-show-on-mobile-and-tablet { display: none !important; @include screen-mobile-and-tablet { display: inline-block !important; } }
+.h-hide-on-mobile-and-tablet { display: inline-block !important; @include screen-mobile-and-tablet { display: none !important; } }
+.h-show-on-desktop { display: none !important; @include screen-desktop { display: inline-block !important; } }
+.h-hide-on-desktop { display: inline-block !important; @include screen-desktop { display: none !important; } }

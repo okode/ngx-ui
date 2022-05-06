@@ -1,0 +1,35 @@
+@import '../utils/mixins';
+
+// Colors
+$color-red:                    #D81E05;
+$color-red-medium-dark:        #BE0F0F;
+$color-red-dark:               #AC0404;
+
+$color-primary:                #2D373D;
+$color-primary-dark:           #1F282C;
+$color-primary-medium:         #526570;
+$color-primary-medium-ligth:   #9CB0BC;
+$color-primary-light:          #E8EBED;
+$color-primary-ultra-light:    #F5F6F7;
+
+$color-black:                  #000000;
+$color-grey-7:                 #2E2E2E;
+$color-grey-6:                 #4C4C4C;
+$color-grey-5:                 #666666;
+$color-grey-4:                 #999999;
+$color-grey-3:                 #BDBDBD;
+$color-grey-2:                 #D6D5D5;
+$color-grey-1:                 #EAE9E9;
+$color-white:                  #FFFFFF;
+
+$color-success:                #008C47;
+$color-error:                  #D81E05;
+$color-alert:                  #FFB37F;
+$color-favorite:               #FFD618;
+$color-active:                 #A2C617;
+$color-disabled:               #F5F6F7;
+
+
+// Safe areas
+$safe-area-top:    env(safe-area-inset-top, 0px);
+$safe-area-bottom: env(safe-area-inset-bottom, 0px);

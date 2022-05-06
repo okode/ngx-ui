@@ -1,0 +1,15 @@
+<div class="c-header" [ngClass]="{ 'c-header--featured': mode === 'featured' || mode === 'featured-logo' }">
+  <div class="c-header__container" [style.marginTop]="collapseHeader && collapseHeaderTopMargin ? (-collapseHeaderTopMargin + 'px') : 0">
+    <div class="c-header__left-icon"><ng-content select="[header-left]"></ng-content></div>
+    <div class="c-header__title" *ngIf="mode === 'default' || mode === 'featured'">{{ title }}</div>
+    <div class="c-header__title" *ngIf="mode === 'logo' || mode === 'featured-logo'"><img src="/assets/logo/logo.svg"></div>
+    <div class="c-header__right-icon"><ng-content select="[header-right]"></ng-content></div>
+    <div class="c-header__collapsable" [ngClass]="{ 'c-header__collapsable--hidden': collapseHeader && !collapseHeaderTopMargin }">
+      <div class="c-header__subtitle" *ngIf="mode === 'default' && subtitle">{{ subtitle }}</div>
+      <div class="c-header__toolbar"><ng-content select="[header-toolbar]"></ng-content></div>
+    </div>
+  </div>
+</div>
+<div class="c-header__progress-bar" *ngIf="progressBar">
+  <div class="c-header__progress-bar-fill" [style.width]="progressBar + '%'"></div>
+</div>
