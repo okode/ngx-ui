@@ -1,4 +1,6 @@
-# NgxUi
+# MAR NGX UI
+
+[![CircleCI](https://circleci.com/gh/okode/ngx-ui/tree/main.svg?style=svg)](https://circleci.com/gh/okode/ngx-ui/tree/main)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
