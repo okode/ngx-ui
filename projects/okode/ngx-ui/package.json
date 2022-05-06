@@ -1,5 +1,5 @@
 {
-  "name": "@mar/ngx-ui",
+  "name": "@okode/ngx-ui",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^13.3.0",

@@ -27,7 +27,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, '../../../coverage/mar/ngx-ui'),
+      dir: require('path').join(__dirname, '../../../coverage/okode/ngx-ui'),
       subdir: '.',
       reporters: [
         { type: 'html' },
@@ -44,7 +44,7 @@ module.exports = function (config) {
       sonarQubeVersion: 'LATEST',
       outputFile: 'test-results/sonarqube/test-results.xml',
       overrideTestDescription: true,
-      testPaths: ['projects/mar/ngx-ui/src'],
+      testPaths: ['projects/okode/ngx-ui/src'],
       testFilePattern: '.spec.ts',
       useBrowserName: false
     },
