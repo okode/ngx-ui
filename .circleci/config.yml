@@ -27,7 +27,7 @@ jobs:
             - projects
   sonar:
     docker:
-      - image: cimg/openjdk:17.0-node'
+      - image: cimg/openjdk:17.0-node
     steps:
       - attach_workspace:
           at: .
