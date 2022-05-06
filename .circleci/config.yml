@@ -2,15 +2,14 @@ version: 2.1
 
 orbs:
   node: circleci/node@5
-  browser-tools: circleci/browser-tools@1
 
 jobs:
   test:
-    executor: node/default
+    executor:
+      name: node/default
+      tag: lts-browsers
     steps:
       - checkout
-      - browser-tools/install-chrome
-      - browser-tools/install-chromedriver
       - node/install-packages
       - run:
           command: npm run test -- --watch=false
