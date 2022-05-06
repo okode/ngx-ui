@@ -28,6 +28,8 @@ body {
 
 input, textarea {
   @include selectable-text;
+  -webkit-appearance: none;
+  border-radius: 0;
 }
 
 iframe {
@@ -43,12 +45,6 @@ img {
 
 a {
   vertical-align: initial;
-}
-
-textarea,
-input {
-  -webkit-appearance: none;
-  border-radius: 0;
 }
 
 h1, h2, h3, h4, h5, h6, p, small {
