@@ -41,3 +41,5 @@ workflows:
           <<: *shared
       - sonar:
           <<: *shared
+          requires:
+            - test
