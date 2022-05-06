@@ -1,13 +1,12 @@
 {
   "name": "okode-ngx-ui-srcs",
-  "version": "0.0.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "release": "npm ci && npm version patch -m \"Bumped version %s [ci skip]\" && git push && git push --tags && npm run build && cd dist/okode/ngx-ui && npm publish --access public && cd -"
+    "release": "npm ci && cd dist/okode/ngx-ui && npm version patch -m \"Bumped version %s [ci skip]\" && git push && git push --tags && cd - && npm run build && cd dist/okode/ngx-ui && npm publish --access public && cd -"
   },
   "private": true,
   "dependencies": {
