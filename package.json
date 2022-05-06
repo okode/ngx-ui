@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "release": "npm version patch -m \"Bumped version %s [ci skip]\" && git push && git push --tags && npm publish --access public"
   },
   "private": true,
   "dependencies": {
