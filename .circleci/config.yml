@@ -5,7 +5,7 @@ shared: &shared
 
 orbs:
   node: circleci/node@5
-  # browser-tools: circleci/browser-tools@1
+  browser-tools: circleci/browser-tools@1
   sonarcloud: sonarsource/sonarcloud@1
 
 jobs:
@@ -15,7 +15,7 @@ jobs:
       tag: lts-browsers
     steps:
       - checkout
-      # - browser-tools/install-chrome
+      - browser-tools/install-chrome
       # - browser-tools/install-chromedriver
       - node/install-packages
       - run:
