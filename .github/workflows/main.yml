@@ -40,4 +40,5 @@ jobs:
           java -jar sonar-scanner.jar
         working-directory: artifact
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONARCLOUD_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}
