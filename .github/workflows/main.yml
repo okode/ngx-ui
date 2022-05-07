@@ -18,3 +18,8 @@ jobs:
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
       - run: npm ci
       - run: npm run test -- --watch=false --browsers=ChromeHeadless
+  sonar:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: sonarsource/sonarcloud-github-action@master
