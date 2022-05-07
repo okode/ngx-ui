@@ -27,9 +27,13 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v3
-      - uses: sonarsource/sonarcloud-github-action@master
-        env:
-          SONAR_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}
+      - uses: actions/setup-java@v3
         with:
-          projectBaseDir: .
+          distribution: 'adopt'
+          java-version: '11'
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - uses: actions/download-artifact@v3
+      - run: curl -L https://repo1.maven.org/maven2/org/sonarsource/scanner/cli/sonar-scanner-cli/4.7.0.2747/sonar-scanner-cli-4.7.0.2747.jar > sonar-scanner.jar
+      - run: java -jar sonar-scanner.jar
