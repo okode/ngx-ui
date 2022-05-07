@@ -17,4 +17,4 @@ jobs:
       - run: |
           export DISPLAY=:99
           chromedriver --url-base=/wd/hub &
-      - run: npm run test -- --watch=false
+          npm run test -- --watch=false
