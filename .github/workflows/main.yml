@@ -18,10 +18,16 @@ jobs:
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
       - run: npm ci
       - run: npm run test -- --watch=false --browsers=ChromeHeadless
+      - uses: actions/upload-artifact@v3
+        with:
+          path: |
+            sonar-project.properties
+            projects
   sonar:
     needs: test
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/download-artifact@v3
       - uses: sonarsource/sonarcloud-github-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}
