@@ -5,7 +5,7 @@ shared: &shared
 
 orbs:
   node: circleci/node@5
-  browser-tools: circleci/browser-tools@1
+  # browser-tools: circleci/browser-tools@1
   sonarcloud: sonarsource/sonarcloud@1
 
 jobs:
@@ -15,11 +15,11 @@ jobs:
       tag: lts-browsers
     steps:
       - checkout
-      - browser-tools/install-chrome
-      - browser-tools/install-chromedriver
+      # - browser-tools/install-chrome
+      # - browser-tools/install-chromedriver
       - node/install-packages
       - run:
-          command: npm run test -- --watch=false
+          command: npm run test -- --watch=false --browsers=ChromeHeadless
       - persist_to_workspace:
           root: .
           paths:
