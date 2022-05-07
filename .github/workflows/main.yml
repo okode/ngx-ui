@@ -23,3 +23,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: sonarsource/sonarcloud-github-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}
