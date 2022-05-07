@@ -16,7 +16,6 @@ jobs:
     steps:
       - checkout
       - browser-tools/install-chrome
-      # - browser-tools/install-chromedriver
       - node/install-packages
       - run:
           command: npm run test -- --watch=false --browsers=ChromeHeadless
