@@ -38,7 +38,7 @@ jobs:
       - run: |
           curl -L https://repo1.maven.org/maven2/org/sonarsource/scanner/cli/sonar-scanner-cli/4.7.0.2747/sonar-scanner-cli-4.7.0.2747.jar > sonar-scanner.jar
           java -Dsonar.drun=true -jar sonar-scanner.jar
-        working-directory: artifact
+        working-directory: test
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONARCLOUD_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}
