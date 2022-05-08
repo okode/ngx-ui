@@ -44,8 +44,8 @@ jobs:
     steps:
       - attach_workspace:
           at: .
-#      - sonarcloud/scan:
-#          sonar_token_variable_name: SONARCLOUD_TOKEN
+      - sonarcloud/scan:
+          sonar_token_variable_name: SONARCLOUD_TOKEN
 
 workflows:
   ci:
