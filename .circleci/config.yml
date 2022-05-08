@@ -42,6 +42,7 @@ jobs:
     docker:
       - image: cimg/openjdk:17.0-node
     steps:
+      - checkout
       - attach_workspace:
           at: .
       - sonarcloud/scan:
