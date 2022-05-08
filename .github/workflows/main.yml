@@ -20,6 +20,7 @@ jobs:
       - run: npm run test -- --watch=false --browsers=ChromeHeadless
       - uses: actions/upload-artifact@v3
         with:
+          name: test
           path: |
             sonar-project.properties
             projects
@@ -32,6 +33,8 @@ jobs:
           distribution: 'adopt'
           java-version: '18'
       - uses: actions/download-artifact@v3
+        with:
+          name: test
       - run: |
           curl -L https://repo1.maven.org/maven2/org/sonarsource/scanner/cli/sonar-scanner-cli/4.7.0.2747/sonar-scanner-cli-4.7.0.2747.jar > sonar-scanner.jar
           java -Dsonar.drun=true -jar sonar-scanner.jar
@@ -55,6 +58,7 @@ jobs:
       - run: npm run build
       - uses: actions/upload-artifact@v3
         with:
+          name: build
           path: dist/okode/ngx-ui
   storybook:
     needs: sonar
@@ -72,4 +76,5 @@ jobs:
       - run: npm run build-storybook
       - uses: actions/upload-artifact@v3
         with:
+          name: storybook
           path: storybook-static
