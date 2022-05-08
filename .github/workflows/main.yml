@@ -52,7 +52,7 @@ jobs:
           path: ~/.npm
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
       - run: npm ci
-      - run: npm runbuild
+      - run: npm run build
       - uses: actions/upload-artifact@v3
         with:
           path: dist/okode/ngx-ui

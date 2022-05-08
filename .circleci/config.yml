@@ -9,21 +9,35 @@ orbs:
   sonarcloud: sonarsource/sonarcloud@1
 
 jobs:
-  test:
+  node:
+    parameters:
+      install-chrome:
+        type: boolean
+        default: false
+      command:
+        type: string
+      persist-path:
+        type: string
+        default: ''
     executor:
       name: node/default
       tag: lts-browsers
     steps:
       - checkout
-      - browser-tools/install-chrome
+      - when:
+          condition: << parameters.install-chrome >>
+          steps:
+            - browser-tools/install-chrome
       - node/install-packages
       - run:
-          command: npm run test -- --watch=false --browsers=ChromeHeadless
-      - persist_to_workspace:
-          root: .
-          paths:
-            - sonar-project.properties
-            - projects
+          command: << parameters.command >>
+      - when:
+          condition: << parameters.persist-path >>
+          steps:
+            - persist_to_workspace:
+                root: .
+                paths:
+                  - << parameters.persist-path >>
   sonar:
     docker:
       - image: cimg/openjdk:17.0-node
@@ -32,46 +46,31 @@ jobs:
           at: .
 #      - sonarcloud/scan:
 #          sonar_token_variable_name: SONARCLOUD_TOKEN
-  build:
-    executor:
-      name: node/default
-      tag: lts-browsers
-    steps:
-      - checkout
-      - node/install-packages
-      - run:
-          command: npm run build
-      - persist_to_workspace:
-          root: .
-          paths:
-            - dist/okode/ngx-ui
-  storybook:
-    executor:
-      name: node/default
-      tag: lts-browsers
-    steps:
-      - checkout
-      - node/install-packages
-      - run:
-          command: npm run build-storybook
-      - persist_to_workspace:
-          root: .
-          paths:
-            - storybook-static
+
 workflows:
   ci:
     jobs:
-      - test:
+      - node:
           <<: *shared
+          name: test
+          install-chrome: true
+          command: npm run test -- --watch=false --browsers=ChromeHeadless
+          persist-path: projects/okode/ngx-ui/test-results
       - sonar:
           <<: *shared
           requires:
             - test
-      - build:
+      - node:
           <<: *shared
+          name: build
+          command: npm run build
+          persist-path: dist/okode/ngx-ui
           requires:
             - sonar
-      - storybook:
+      - node:
           <<: *shared
+          name: storybook
+          command: npm run build-storybook
+          persist-path: storybook-static
           requires:
             - sonar
