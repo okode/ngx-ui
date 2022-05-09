@@ -3,11 +3,22 @@ name: ci
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      enable-ssh:
+        type: boolean
+        description: 'Enables SSH for debugging'
+        required: true
+        default: true
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+        timeout-minutes: 10
+        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.enable-ssh }}
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
